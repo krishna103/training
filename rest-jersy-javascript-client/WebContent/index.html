@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Jersy Client</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" 
+crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+$(function(){
+	var reqURL='http://localhost:8080/rest-jersy/rest/invoices'
+	var req={
+		type:'GET',
+	    url:reqURL,
+	    success:function(data){
+	    	var value=JSON.stringify(data);
+	    	$('#content').text(value);
+	    }
+	};
+	$.ajax(req);
+});
+
+</script>
+</head>
+<body>
+<div id="content"></div>
+</body>
+</html>
