@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: api-gateway
+    
+server:  port: 2030
+  
+
+zuul:  routes:    rest-jersy:
+       path: /rest/**
+       url: http://localhost:5050/rest-jersy/
+       strip-prefix: false
+
+management:  endpoints:    web:      exposure:        include:        - "*"
